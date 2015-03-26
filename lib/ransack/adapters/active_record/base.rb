@@ -4,7 +4,9 @@ module Ransack
       module Base
 
         def self.extended(base)
-          alias :search :ransack unless base.respond_to? :search
+
+          # alias :search :ransack unless base.respond_to? :search
+          
           base.class_eval do
             class_attribute :_ransackers
             self._ransackers ||= {}
